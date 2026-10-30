@@ -35,14 +35,18 @@
     <script>
         const map = new maplibregl.Map({
             style: `https://api.maptiler.com/maps/019a35bb-6fd5-7219-9f9e-51b16ae44f98/style.json?key=mkHS0GRHWVUIL3ykWsLX`,
-            center: [75.0066, 5.7135],
-            zoom: 5.0,
+            center: [5.9520257640229115, 174.9857018282324],
+            zoom: 3.0,
             pitch: 0,
             bearing: 0,
             container: 'map-container',
             canvasContextAttributes: {antialias: true},
             attributionControl: false
         });
+
+        const island_names = [
+            "Fiji", "Niue", "Solomon Islands", "Tuvalu", "Vanuatu"
+        ];
 
         const island_palette = {
             "Fiji":"#fa7970",
@@ -51,6 +55,15 @@
             "Tuvalu":"#77bdfb",
             "Vanuatu":"#a2d2fb"
         };
+
+        const island_coords = {
+            "Fiji": [-17.362674335532883, 178.48988518042015],
+            "Niue": [-19.051718019481193, -169.85759914120328],
+            "Solomon Islands": [-9.254970306784259, 159.67616986233236],
+            "Tuvalu": [-8.522958768308914, 179.19559077720686],
+            "Vanuatu": [-15.513475220400256, 167.4561692603977]
+        };
+
     </script>
 
 <!-- <script src="datacenters.js"></script> -->
