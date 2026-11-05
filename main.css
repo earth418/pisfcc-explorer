@@ -1,0 +1,30 @@
+#map-container {
+    position: absolute; 
+    height: 100%; 
+    width:100%; 
+    z-index: -100;
+    pointer-events: none;
+}
+
+#explorer {
+    left:0;
+    width: 20%;
+    background-color: rgba(0.5, 0.5, 0.5, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+#explorer > ul {
+    /* vertical-align:middle; */
+    margin: 1em ;
+    padding: 0;
+    /* background-color: rgba(0.5, 0.5, 0.5, 0.2); */
+}
+
+#explorer > ul > li {
+    display: block;
+    color: #ecf2f8;
+    border: 1px solid white;
+    margin: 8px 0;
+    /* background-color: red; */
+}

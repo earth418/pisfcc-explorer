@@ -1,5 +1,26 @@
-// import datacenters_data from './datacenters.json';
-// let datacenter_locations = [];
+
+const explorer = document.getElementById("explorer");
+const exp_ul = explorer.querySelector("ul");
+
+let island_uls = [];
+
+island_names.forEach(element => {
+    let isul = document.createElement("li");
+
+    isul.textContent = element;
+    isul.onclick = () => {
+        map.flyTo({
+            center: island_coords[element],
+            zoom : 10
+        });
+    };
+
+    exp_ul.appendChild(isul);
+    island_uls["element"] = isul;
+});
+
+
+
 
 let points_geojson = {
     'type': 'FeatureCollection',
