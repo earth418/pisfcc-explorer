@@ -11,7 +11,7 @@ island_names.forEach(element => {
     isul.onclick = () => {
         map.flyTo({
             center: island_coords[element],
-            zoom : 10
+            zoom : 5
         });
     };
 

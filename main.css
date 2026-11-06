@@ -26,5 +26,6 @@
     color: #ecf2f8;
     border: 1px solid white;
     margin: 8px 0;
+    cursor: pointer;
     /* background-color: red; */
 }

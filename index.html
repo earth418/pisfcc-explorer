@@ -28,9 +28,20 @@
     </button>
     
     <script>
+        
+        function fixCoord(location) {
+            return [location[1], location[0]];
+            // if (location[1] >= 90.0) {
+            //     return [-180 + location[1], location[01]];
+            // }
+            // else if (location[1] <= -90.0) {
+            //     return []
+            // }
+        }
+
         const map = new maplibregl.Map({
             style: `https://api.maptiler.com/maps/019a35bb-6fd5-7219-9f9e-51b16ae44f98/style.json?key=mkHS0GRHWVUIL3ykWsLX`,
-            center: [5.9520257640229115, -180+174.9857018282324],
+            center: fixCoord([5.9520257640229115, 174.9857018282324]),
             zoom: 3.0,
             pitch: 0,
             bearing: 0,
@@ -52,11 +63,11 @@
         };
 
         const island_coords = {
-            "Fiji": [-17.362674335532883, 178.48988518042015],
-            "Niue": [-19.051718019481193, -169.85759914120328],
-            "Solomon Islands": [-9.254970306784259, 159.67616986233236],
-            "Tuvalu": [-8.522958768308914, 179.19559077720686],
-            "Vanuatu": [-15.513475220400256, 167.4561692603977]
+            "Fiji": fixCoord([-17.362674335532883, 178.48988518042015]),
+            "Niue": fixCoord([-19.051718019481193, 169.85759914120328]),
+            "Solomon Islands": fixCoord([-9.254970306784259, 159.67616986233236]),
+            "Tuvalu": fixCoord([-8.522958768308914, 179.19559077720686]),
+            "Vanuatu": fixCoord([-15.513475220400256, 167.4561692603977])
         };
 
     </script>
