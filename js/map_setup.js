@@ -1,3 +1,6 @@
+import testimony from "../data/testimony.json" with {type: "json"};
+
+// console.log(testimony[0]);
 
 const explorer = document.getElementById("explorer");
 const exp_ul = explorer.querySelector("ul");
@@ -7,8 +10,12 @@ let island_uls = [];
 island_names.forEach(element => {
     let isul = document.createElement("li");
 
-    isul.textContent = element;
-    isul.onclick = () => {
+    let isul_text = document.createElement("div");
+    isul_text.className = "island-text";
+    isul.appendChild(isul_text);
+
+    isul_text.textContent = element;
+    isul_text.onclick = () => {
         map.flyTo({
             center: island_coords[element],
             zoom : 5
@@ -16,10 +23,35 @@ island_names.forEach(element => {
     };
 
     exp_ul.appendChild(isul);
-    island_uls["element"] = isul;
+
+    let isul_list = document.createElement("ul");
+    isul_list.classList.add("t-list")
+    isul.appendChild(isul_list)
+    
+    island_uls[element] = isul;
 });
 
 
+
+testimony.forEach((t) => {
+    let island_country = t["country"];
+    let c = island_uls[island_country];
+   
+    let list_entry = document.createElement("li");
+    let isul_list = c.getElementsByClassName("t-list")[0];
+
+    list_entry.textContent = t["name"];
+    list_entry.onclick = () => {
+        map.flyTo({
+            center: fixCoord(t["location"]),
+            zoom : 12.5
+        });
+    };
+
+
+    isul_list.appendChild(list_entry);
+    
+});
 
 
 let points_geojson = {

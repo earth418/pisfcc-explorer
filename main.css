@@ -7,7 +7,7 @@
 }
 
 #explorer {
-    width: 25%;
+    max-width: 50%;
     height: 100%;
     left:0;
     background-color: rgba(0.5, 0.5, 0.5, 0.5);
@@ -27,9 +27,23 @@
     color: #ecf2f8;
     /* border: 1px solid white; */
     margin: 0.5em 0;
-    padding: 0.25em;
+    /* padding: 0.25em; */
     font-family: sans-serif;
     
     cursor: pointer;
     background-color: rgba(0.5, 0.5, 0.5, 0.2);
+}
+
+.island-text {
+    padding: 0.5em;
+}
+
+.t-list {
+    /* padding: 0; */
+    list-style: none;
+    padding-left: 15%;
+    margin: 0;
+    width: 85%;
+    /* display: block; */
+    background-color: rgba(0.8, 0.8, 0.8, 0.2);
 }
